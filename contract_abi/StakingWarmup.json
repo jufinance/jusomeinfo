@@ -8,7 +8,7 @@
       },
       {
         "internalType": "address",
-        "name": "_sJUB",
+        "name": "_sTOKEN",
         "type": "address"
       }
     ],
@@ -68,7 +68,7 @@
   },
   {
     "inputs": [],
-    "name": "sJUB",
+    "name": "sTOKEN",
     "outputs": [
       {
         "internalType": "address",

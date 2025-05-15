@@ -3,7 +3,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_JUB",
+        "name": "_TOKEN",
         "type": "address"
       },
       {
@@ -28,7 +28,7 @@
       },
       {
         "internalType": "address",
-        "name": "_sJUB",
+        "name": "_sTOKEN",
         "type": "address"
       },
       {
@@ -295,7 +295,7 @@
   },
   {
     "inputs": [],
-    "name": "JUB",
+    "name": "TOKEN",
     "outputs": [
       {
         "internalType": "address",
@@ -574,7 +574,7 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "_bondPriceInJUB",
+        "name": "_bondPriceInTOKEN",
         "type": "uint256"
       },
       {
@@ -743,7 +743,7 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "_bondPriceInJUB",
+        "name": "_bondPriceInTOKEN",
         "type": "uint256"
       },
       {
@@ -1256,7 +1256,7 @@
   },
   {
     "inputs": [],
-    "name": "sJUB",
+    "name": "sTOKEN",
     "outputs": [
       {
         "internalType": "address",

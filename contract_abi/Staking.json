@@ -3,12 +3,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_JUB",
+        "name": "_TOKEN",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_sJUB",
+        "name": "_sTOKEN",
         "type": "address"
       },
       {
@@ -23,7 +23,7 @@
       },
       {
         "internalType": "address",
-        "name": "_pairJUBUSDT",
+        "name": "_pairTOKENUSDT",
         "type": "address"
       }
     ],
@@ -54,13 +54,13 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "stakingJUBBalance",
+        "name": "stakingTOKENBalance",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "sJUBCirculatingSupply",
+        "name": "sTOKENCirculatingSupply",
         "type": "uint256"
       }
     ],
@@ -201,19 +201,6 @@
   },
   {
     "inputs": [],
-    "name": "JUB",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "JUC",
     "outputs": [
       {
@@ -227,7 +214,7 @@
   },
   {
     "inputs": [],
-    "name": "PAIR_JUB_USDT",
+    "name": "PAIR_TOKEN_USDT",
     "outputs": [
       {
         "internalType": "address",
@@ -244,6 +231,19 @@
     "outputs": [
       {
         "internalType": "contract IReleasePool",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "TOKEN",
+    "outputs": [
+      {
+        "internalType": "address",
         "name": "",
         "type": "address"
       }
@@ -588,7 +588,7 @@
   },
   {
     "inputs": [],
-    "name": "sJUB",
+    "name": "sTOKEN",
     "outputs": [
       {
         "internalType": "address",

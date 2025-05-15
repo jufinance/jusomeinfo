@@ -41,7 +41,7 @@
   },
   {
     "inputs": [],
-    "name": "JUB",
+    "name": "TOKEN",
     "outputs": [
       {
         "internalType": "address",

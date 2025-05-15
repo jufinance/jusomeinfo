@@ -33,20 +33,7 @@
   },
   {
     "inputs": [],
-    "name": "JUB",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "LP_JUB_USDT",
+    "name": "LP_TOKEN_USDT",
     "outputs": [
       {
         "internalType": "address",
@@ -78,6 +65,19 @@
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "TOKEN",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -128,7 +128,7 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "circulatingWorthJUB",
+        "name": "circulatingWorthTOKEN",
         "type": "uint256"
       },
       {
@@ -143,7 +143,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "stakedJUBRatio",
+        "name": "stakedTOKENRatio",
         "type": "uint256"
       },
       {
@@ -158,7 +158,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "totalJUBBurning",
+        "name": "totalTOKENBurning",
         "type": "uint256"
       }
     ],
@@ -171,7 +171,7 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "circulatingWorthJUB",
+        "name": "circulatingWorthTOKEN",
         "type": "uint256"
       }
     ],
@@ -193,7 +193,7 @@
   },
   {
     "inputs": [],
-    "name": "getStakedJUBRatio",
+    "name": "getStakedTOKENRatio",
     "outputs": [
       {
         "internalType": "uint256",
@@ -206,7 +206,7 @@
   },
   {
     "inputs": [],
-    "name": "getTotalJUBBurning",
+    "name": "getTotalTOKENBurning",
     "outputs": [
       {
         "internalType": "uint256",
@@ -265,17 +265,17 @@
       },
       {
         "internalType": "address",
-        "name": "_JUB",
+        "name": "_TOKEN",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_sJUB",
+        "name": "_sTOKEN",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_LP_JUB_USDT",
+        "name": "_LP_TOKEN_USDT",
         "type": "address"
       },
       {
@@ -315,22 +315,22 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "amountJUB",
+        "name": "amountTOKEN",
         "type": "uint256"
       },
       {
         "internalType": "uint256",
-        "name": "priceJUB",
+        "name": "priceTOKEN",
         "type": "uint256"
       },
       {
         "internalType": "uint256",
-        "name": "circulatingJUB",
+        "name": "circulatingTOKEN",
         "type": "uint256"
       },
       {
         "internalType": "uint256",
-        "name": "stakedJUB",
+        "name": "stakedTOKEN",
         "type": "uint256"
       },
       {
@@ -382,7 +382,7 @@
   },
   {
     "inputs": [],
-    "name": "sJUB",
+    "name": "sTOKEN",
     "outputs": [
       {
         "internalType": "address",

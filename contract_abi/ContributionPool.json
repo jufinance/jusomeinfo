@@ -3,7 +3,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_JUB",
+        "name": "_TOKEN",
         "type": "address"
       },
       {
@@ -253,19 +253,6 @@
   },
   {
     "inputs": [],
-    "name": "JUB",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "RELEASE_POOL",
     "outputs": [
       {
@@ -296,6 +283,19 @@
     "outputs": [
       {
         "internalType": "contract IStaking",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "TOKEN",
+    "outputs": [
+      {
+        "internalType": "address",
         "name": "",
         "type": "address"
       }

@@ -8,7 +8,7 @@
       },
       {
         "internalType": "address",
-        "name": "_JUB",
+        "name": "_TOKEN",
         "type": "address"
       },
       {
@@ -18,7 +18,7 @@
       },
       {
         "internalType": "address",
-        "name": "_PAIR_JUB_USDT",
+        "name": "_PAIR_TOKEN_USDT",
         "type": "address"
       },
       {
@@ -113,7 +113,7 @@
   },
   {
     "inputs": [],
-    "name": "JUB",
+    "name": "PAIR_TOKEN_USDT",
     "outputs": [
       {
         "internalType": "address",
@@ -126,7 +126,7 @@
   },
   {
     "inputs": [],
-    "name": "PAIR_JUB_USDT",
+    "name": "TOKEN",
     "outputs": [
       {
         "internalType": "address",

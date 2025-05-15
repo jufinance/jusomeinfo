@@ -272,7 +272,7 @@
   },
   {
     "inputs": [],
-    "name": "sJUB",
+    "name": "sTOKEN",
     "outputs": [
       {
         "internalType": "address",

@@ -3,7 +3,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_JUB",
+        "name": "_TOKEN",
         "type": "address"
       },
       {
@@ -274,19 +274,6 @@
     "type": "event"
   },
   {
-    "inputs": [],
-    "name": "JUB",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
@@ -357,6 +344,19 @@
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "TOKEN",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -527,7 +527,7 @@
       },
       {
         "internalType": "address",
-        "name": "_USDTJUB",
+        "name": "_USDTTOKEN",
         "type": "address"
       },
       {
@@ -1053,7 +1053,7 @@
   },
   {
     "inputs": [],
-    "name": "sJUB",
+    "name": "sTOKEN",
     "outputs": [
       {
         "internalType": "address",
@@ -1066,7 +1066,7 @@
   },
   {
     "inputs": [],
-    "name": "sJUBQueue",
+    "name": "sTOKENQueue",
     "outputs": [
       {
         "internalType": "uint256",

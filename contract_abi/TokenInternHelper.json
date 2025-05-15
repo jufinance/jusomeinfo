@@ -3,7 +3,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_JUB",
+        "name": "_TOKEN",
         "type": "address"
       }
     ],
@@ -70,7 +70,7 @@
   },
   {
     "inputs": [],
-    "name": "JUB",
+    "name": "TOKEN",
     "outputs": [
       {
         "internalType": "contract IERC20TokenX",
