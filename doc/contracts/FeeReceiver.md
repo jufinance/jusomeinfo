@@ -14,7 +14,7 @@ contract FeeReceiver is AccessControlUpgradeable
 ### EventTriggerSwap
 
 ```solidity
-event EventTriggerSwap(uint256 csmAmount, uint256 usdtAmount)
+event EventTriggerSwap(uint256 tkAmount, uint256 usdtAmount)
 ```
 
 

@@ -18,10 +18,10 @@ address immutable staking
 ```
 
 
-### JUB (0xc0bc725e)
+### TOKEN (0x82bfefc8)
 
 ```solidity
-address immutable JUB
+address immutable TOKEN
 ```
 
 
@@ -30,7 +30,7 @@ address immutable JUB
 ### constructor
 
 ```solidity
-constructor(address _staking, address _JUB)
+constructor(address _staking, address _TOKEN)
 ```
 
 

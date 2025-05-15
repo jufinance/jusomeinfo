@@ -31,13 +31,6 @@ Emitted when the allowance of a `spender` for an `owner` is set by
 a call to {approve}. `value` is the new allowance.
 ## Functions info
 
-### decimals (0x313ce567)
-
-```solidity
-function decimals() external view returns (uint8)
-```
-
-
 ### totalSupply (0x18160ddd)
 
 ```solidity

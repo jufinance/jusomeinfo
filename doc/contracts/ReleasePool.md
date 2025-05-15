@@ -190,10 +190,10 @@ address immutable JUC
 ```
 
 
-### JUB (0xc0bc725e)
+### TOKEN (0x82bfefc8)
 
 ```solidity
-address immutable JUB
+address immutable TOKEN
 ```
 
 
@@ -211,10 +211,10 @@ address immutable UNISWAPV2FACTORY
 ```
 
 
-### LP_JUB_USDT (0x6688a8bd)
+### LP_TOKEN_USDT (0x6f7b0850)
 
 ```solidity
-address immutable LP_JUB_USDT
+address immutable LP_TOKEN_USDT
 ```
 
 
@@ -259,7 +259,7 @@ mapping(uint256 => mapping(address => uint256)) userReleasedContributionReward
 mapping(uint256 => mapping(address => uint256)) userBurned
 ```
 
-用户销毁的JUB数量
+用户销毁的TOKEN数量
 ### recordLength (0x8fdade05)
 
 ```solidity
@@ -318,7 +318,7 @@ modifier onlyContributionPool()
 ```solidity
 constructor(
     address _JUC,
-    address _JUB,
+    address _TOKEN,
     address _USDT,
     address _uniswapv2Router,
     address _oracle
@@ -362,11 +362,11 @@ Parameters:
 
 Return values:
 
-| Name               | Type    | Description |
-| :----------------- | :------ | :---------- |
-| stakeBase_         | uint256 | 质押基数        |
-| contributorFactor_ | uint256 | 能量因子        |
-| destructionFactor_ | uint256 | 销毁JUB的数量x4  |
+| Name               | Type    | Description  |
+| :----------------- | :------ | :----------- |
+| stakeBase_         | uint256 | 质押基数         |
+| contributorFactor_ | uint256 | 能量因子         |
+| destructionFactor_ | uint256 | 销毁TOKEN的数量x4 |
 
 ### burnToken (0x8225b247)
 
@@ -374,7 +374,7 @@ Return values:
 function burnToken(uint256 uid_, uint256 amount_) external
 ```
 
-用户销毁JUB，降低ContributionFactor
+用户销毁TOKEN，降低ContributionFactor
 
 
 Parameters:

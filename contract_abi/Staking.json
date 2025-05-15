@@ -269,6 +269,11 @@
         "type": "uint256"
       },
       {
+        "internalType": "address",
+        "name": "_burnToken",
+        "type": "address"
+      },
+      {
         "internalType": "uint256",
         "name": "_burnAmt",
         "type": "uint256"
@@ -510,6 +515,25 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "isDestructionToken",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "locker",
     "outputs": [
@@ -613,6 +637,24 @@
       }
     ],
     "name": "setContract",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token_",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "state_",
+        "type": "bool"
+      }
+    ],
+    "name": "setDestructionToken",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

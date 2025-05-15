@@ -80,7 +80,7 @@ event EventStartClaimInterest(uint256 indexed uid, address indexed staker, uint2
 ### EventRebase
 
 ```solidity
-event EventRebase(uint256 curEpochNumber, uint256 profit, uint256 nextProfit, uint256 stakingJUBBalance, uint256 sJUBCirculatingSupply)
+event EventRebase(uint256 curEpochNumber, uint256 profit, uint256 nextProfit, uint256 stakingTOKENBalance, uint256 sTOKENCirculatingSupply)
 ```
 
 rebase数据
@@ -88,13 +88,13 @@ rebase数据
 
 Parameters:
 
-| Name                  | Type    | Description           |
-| :-------------------- | :------ | :-------------------- |
-| curEpochNumber        | uint256 | 当前epoch序号             |
-| profit                | uint256 | 本次rebase总发放收益         |
-| nextProfit            | uint256 | 下次rebase预计发放收益        |
-| stakingJUBBalance     | uint256 | 当前Staking中JUB的存量      |
-| sJUBCirculatingSupply | uint256 | 当前sJUB的circulation供应量 |
+| Name                    | Type    | Description             |
+| :---------------------- | :------ | :---------------------- |
+| curEpochNumber          | uint256 | 当前epoch序号               |
+| profit                  | uint256 | 本次rebase总发放收益           |
+| nextProfit              | uint256 | 下次rebase预计发放收益          |
+| stakingTOKENBalance     | uint256 | 当前Staking中TOKEN的存量      |
+| sTOKENCirculatingSupply | uint256 | 当前sTOKEN的circulation供应量 |
 
 ## State variables info
 
@@ -105,10 +105,10 @@ contract IReleasePool immutable RELEASE_POOL
 ```
 
 
-### PAIR_JUB_USDT (0x7c53a349)
+### PAIR_TOKEN_USDT (0x1a515a6a)
 
 ```solidity
-address immutable PAIR_JUB_USDT
+address immutable PAIR_TOKEN_USDT
 ```
 
 
@@ -119,17 +119,17 @@ address immutable JUC
 ```
 
 
-### JUB (0xc0bc725e)
+### TOKEN (0x82bfefc8)
 
 ```solidity
-address immutable JUB
+address immutable TOKEN
 ```
 
 
-### sJUB (0x0ebaf44b)
+### sTOKEN (0x726ed7c4)
 
 ```solidity
-address immutable sJUB
+address immutable sTOKEN
 ```
 
 
@@ -168,17 +168,24 @@ mapping(uint256 => mapping(address => uint256)) principals
 ```
 
 
+### isDestructionToken (0x4382af3e)
+
+```solidity
+mapping(address => bool) isDestructionToken
+```
+
+
 ## Functions info
 
 ### constructor
 
 ```solidity
 constructor(
-    address _JUB,
-    address _sJUB,
+    address _TOKEN,
+    address _sTOKEN,
     address _JUC,
     address _releasePool,
-    address _pairJUBUSDT
+    address _pairTOKENUSDT
 )
 ```
 
@@ -267,7 +274,7 @@ function getStakeTokenWorth(
 ) public view returns (uint256)
 ```
 
-获取已质押JUB的USD价值
+获取已质押TOKEN的USD价值
 ### getStakedAmountList (0xc2e5ed92)
 
 ```solidity
@@ -288,16 +295,16 @@ function stake(
 ) external returns (bool)
 ```
 
-质押JUB
+质押TOKEN
 
 
 Parameters:
 
-| Name       | Type    | Description       |
-| :--------- | :------ | :---------------- |
-| _uid       | uint256 | 项目id              |
-| _amount    | uint256 | 质押数量              |
-| _recipient | address | JUB的owner @return |
+| Name       | Type    | Description         |
+| :--------- | :------ | :------------------ |
+| _uid       | uint256 | 项目id                |
+| _amount    | uint256 | 质押数量                |
+| _recipient | address | TOKEN的owner @return |
 
 ### unstake (0x5b64f391)
 
@@ -316,13 +323,14 @@ Parameters:
 | _trigger | bool    | 是否尝试触发rebase  |
 | _amount  | uint256 | unstake的数量    |
 
-### claimInterest (0x3605134e)
+### claimInterest (0xed88c2bd)
 
 ```solidity
 function claimInterest(
     uint256 _uid,
     bool _trigger,
     uint256 _amount,
+    address _burnToken,
     uint256 _burnAmt,
     uint256 _releaseLevel
 ) external
@@ -337,6 +345,7 @@ Parameters:
 | :------------ | :------ | :---------------- |
 | _uid          | uint256 | 项目id              |
 | _trigger      | bool    | 是否尝试触发rebase      |
+| _burnToken    | address | 释放的币种             |
 | _amount       | uint256 | 释放的收益数量           |
 | _burnAmt      | uint256 | 释放收益所需要销毁的数量      |
 | _releaseLevel | uint256 | 释放等级。1~5对应150天到7天 |
@@ -347,14 +356,14 @@ Parameters:
 function index() public view returns (uint256)
 ```
 
-returns the sJUB index, which tracks rebase growth
+returns the sTOKEN index, which tracks rebase growth
 
 
 Return values:
 
-| Name | Type    | Description        |
-| :--- | :------ | :----------------- |
-| [0]  | uint256 | uint256 sJUB的index |
+| Name | Type    | Description          |
+| :--- | :------ | :------------------- |
+| [0]  | uint256 | uint256 sTOKEN的index |
 
 ### rebase (0xaf14052c)
 
@@ -369,7 +378,7 @@ trigger rebase if epoch over
 function contractBalance() public view returns (uint256)
 ```
 
-returns contract JUB holdings, including bonuses provided
+returns contract TOKEN holdings, including bonuses provided
 
 
 Return values:
@@ -426,5 +435,12 @@ function updateEpoch(
     uint256 _epochLength,
     uint256 _endBlockTime
 ) external onlyOwner
+```
+
+
+### setDestructionToken (0xc5ab6c3e)
+
+```solidity
+function setDestructionToken(address token_, bool state_) external onlyOwner
 ```
 

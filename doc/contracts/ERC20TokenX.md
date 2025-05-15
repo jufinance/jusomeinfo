@@ -41,6 +41,13 @@ bytes32 constant INTERN_SYSTEM = keccak256("INTERN_SYSTEM")
 ```
 
 
+### INTERN_SYSTEM_MANAGER (0xc2524a4a)
+
+```solidity
+bytes32 constant INTERN_SYSTEM_MANAGER = keccak256("INTERN_SYSTEM_MANAGER")
+```
+
+
 ### COOLING_PROTECTOR (0x6d851e71)
 
 ```solidity

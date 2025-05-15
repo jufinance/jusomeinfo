@@ -8,8 +8,8 @@
 contract BondDepository is OwnableUpgradeable
 ```
 
-一个Bond是一个JUB的线性释放。购买一个Bond，可能需要价值n个JUB，这个n就是BondPrice。
-购买一个Bond之后，它立刻就会线性释放一个JUB。
+一个Bond是一个TOKEN的线性释放。购买一个Bond，可能需要价值n个TOKEN，这个n就是BondPrice。
+购买一个Bond之后，它立刻就会线性释放一个TOKEN。
 ## Enums info
 
 ### PARAMETER
@@ -122,10 +122,10 @@ event ControlVariableAdjustment(uint256 initialBCV, uint256 newBCV, uint256 adju
 
 ## State variables info
 
-### JUB (0xc0bc725e)
+### TOKEN (0x82bfefc8)
 
 ```solidity
-address immutable JUB
+address immutable TOKEN
 ```
 
 
@@ -150,10 +150,10 @@ address immutable DAO
 ```
 
 
-### sJUB (0x0ebaf44b)
+### sTOKEN (0x726ed7c4)
 
 ```solidity
-address immutable sJUB
+address immutable sTOKEN
 ```
 
 
@@ -275,12 +275,12 @@ mapping(uint256 => mapping(address => struct BondDepository.Bond)) inviteBond
 
 ```solidity
 constructor(
-    address _JUB,
+    address _TOKEN,
     address _principle,
     address _treasury,
     address _DAO,
     address _bondCalculator,
-    address _sJUB,
+    address _sTOKEN,
     address _contributionPool,
     address _community
 )
@@ -503,7 +503,7 @@ function getBondBuyInfo()
     public
     view
     returns (
-        uint256 _bondPriceInJUB,
+        uint256 _bondPriceInTOKEN,
         uint256 _bondPriceInU,
         uint256 _maxQuantity,
         uint256 _debtRatio,
@@ -516,13 +516,13 @@ function getBondBuyInfo()
 
 Return values:
 
-| Name            | Type    | Description                                    |
-| :-------------- | :------ | :--------------------------------------------- |
-| _bondPriceInJUB | uint256 | bond的JUB价格                                     |
-| _bondPriceInU   | uint256 | bond的USDT价格,roi = token price / _bondPriceInU  |
-| _maxQuantity    | uint256 | 最大可购买的JUB数量                                    |
-| _debtRatio      | uint256 | DebtRatio，精度9                                  |
-| _vestionTerm    | uint256 | 线性释放块数                                         |
+| Name              | Type    | Description                                    |
+| :---------------- | :------ | :--------------------------------------------- |
+| _bondPriceInTOKEN | uint256 | bond的TOKEN价格                                   |
+| _bondPriceInU     | uint256 | bond的USDT价格,roi = token price / _bondPriceInU  |
+| _maxQuantity      | uint256 | 最大可购买的TOKEN数量                                  |
+| _debtRatio        | uint256 | DebtRatio，精度9                                  |
+| _vestionTerm      | uint256 | 线性释放块数                                         |
 
 ### getBondSoldInfo (0x7ce0b651)
 
@@ -531,7 +531,7 @@ function getBondSoldInfo()
     public
     view
     returns (
-        uint256 _bondPriceInJUB,
+        uint256 _bondPriceInTOKEN,
         uint256 _bondPriceInU,
         uint256 _totalDebt,
         uint256 _maxDebt
@@ -543,12 +543,12 @@ function getBondSoldInfo()
 
 Return values:
 
-| Name            | Type    | Description                                    |
-| :-------------- | :------ | :--------------------------------------------- |
-| _bondPriceInJUB | uint256 | bond的JUB价格                                     |
-| _bondPriceInU   | uint256 | bond的USDT价格,roi = token price / _bondPriceInU  |
-| _totalDebt      | uint256 | 当前已购买数量                                        |
-| _maxDebt        | uint256 | 购买上限                                           |
+| Name              | Type    | Description                                    |
+| :---------------- | :------ | :--------------------------------------------- |
+| _bondPriceInTOKEN | uint256 | bond的TOKEN价格                                   |
+| _bondPriceInU     | uint256 | bond的USDT价格,roi = token price / _bondPriceInU  |
+| _totalDebt        | uint256 | 当前已购买数量                                        |
+| _maxDebt          | uint256 | 购买上限                                           |
 
 ### getBondInfoList (0xb234c8b4)
 
@@ -608,7 +608,7 @@ Return values:
 function estimateGetTOKEN(uint256 _amount) public view returns (uint256 payout)
 ```
 
-获取Bond的预估购买到JUB数量
+获取Bond的预估购买到TOKEN数量
 
 
 Parameters:
@@ -622,7 +622,7 @@ Return values:
 
 | Name   | Type    | Description |
 | :----- | :------ | :---------- |
-| payout | uint256 | JUB的数量      |
+| payout | uint256 | TOKEN的数量    |
 
 ### getMembers (0xcc1a380f)
 
@@ -657,9 +657,9 @@ function payoutFor(uint256 _value) public view returns (uint256)
 
 calculate interest due for new bond
 
-BondExecutingPrice_toJUB = ( Value / Premium )
+BondExecutingPrice_toTOKEN = ( Value / Premium )
                     = (value * 1e18 / (premium percent * 100)) / 1e18 * 100
-             总共JUB的数量为_value, 一个bond可以换`bondPrice()`个JUB，返回可以换到多少JUB。
+             总共TOKEN的数量为_value, 一个bond可以换`bondPrice()`个TOKEN，返回可以换到多少TOKEN。
 
 
 Parameters:
@@ -681,7 +681,7 @@ Return values:
 function bondPrice() public view returns (uint256 price_)
 ```
 
-calculate current bond premium, 一个bond价值几个JUBM， 1个？or price个。
+calculate current bond premium, 一个bond价值几个TOKENM， 1个？or price个。
 
 price = premium = 100% + (debtRadio * BCV)
              = (1e9 + (tokenDebt/tokenSupply * 1e9 * BCV)) / 1e7
@@ -718,21 +718,21 @@ function getNewBCV(uint256 _price) public view returns (uint256 _newbcv)
 
 get new bvc
 
-(BCV * debtRatio) + 1， 表示1个bond值几个JUB。
+(BCV * debtRatio) + 1， 表示1个bond值几个TOKEN。
 
 
 Parameters:
 
-| Name   | Type    | Description                                                      |
-| :----- | :------ | :--------------------------------------------------------------- |
-| _price | uint256 | uint 一个Bond的USD价值，markdown为一个JUB的USD价值。_price/markdown = 几个JUB。  |
+| Name   | Type    | Description                                                          |
+| :----- | :------ | :------------------------------------------------------------------- |
+| _price | uint256 | uint 一个Bond的USD价值，markdown为一个TOKEN的USD价值。_price/markdown = 几个TOKEN。  |
 
 
 Return values:
 
-| Name    | Type    | Description                            |
-| :------ | :------ | :------------------------------------- |
-| _newbcv | uint256 | uint 控制Bond的未释放比例，对一个bond可以兑换的JUB数量的影响 |
+| Name    | Type    | Description                              |
+| :------ | :------ | :--------------------------------------- |
+| _newbcv | uint256 | uint 控制Bond的未释放比例，对一个bond可以兑换的TOKEN数量的影响 |
 
 ### getNewPrice (0x6e5bf8e7)
 
@@ -762,7 +762,7 @@ Return values:
 function debtRatio() public view returns (uint256 debtRatio_)
 ```
 
-calculate current ratio of debt to JUB supply
+calculate current ratio of debt to TOKEN supply
 
 
 Return values:
@@ -857,7 +857,7 @@ function pendingPayoutFor(
 ) external view returns (uint256 pendingPayout_)
 ```
 
-calculate amount of JUB available for claim by depositor
+calculate amount of TOKEN available for claim by depositor
 
 
 Parameters:
@@ -881,7 +881,7 @@ Return values:
 function recoverLostToken(address _token) external returns (bool)
 ```
 
-allow anyone to send lost tokens (excluding principle or JUB) to the DAO
+allow anyone to send lost tokens (excluding principle or TOKEN) to the DAO
 
 
 Return values:

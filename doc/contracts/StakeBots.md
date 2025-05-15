@@ -58,17 +58,17 @@ address immutable USDT
 ```
 
 
-### JUB (0xc0bc725e)
+### TOKEN (0x82bfefc8)
 
 ```solidity
-address immutable JUB
+address immutable TOKEN
 ```
 
 
-### sJUB (0x0ebaf44b)
+### sTOKEN (0x726ed7c4)
 
 ```solidity
-address immutable sJUB
+address immutable sTOKEN
 ```
 
 
@@ -200,14 +200,14 @@ function setApproveToOther(
 function balanceOfTOKEN() external view returns (uint256)
 ```
 
-JUB的余额
+TOKEN的余额
 ### balanceOfsTOKEN (0x6d1a32cb)
 
 ```solidity
 function balanceOfsTOKEN() external view returns (uint256)
 ```
 
-sJUB的余额
+sTOKEN的余额
 ### balanceOfUSDT (0x1aab3474)
 
 ```solidity
@@ -307,14 +307,14 @@ function buyTOKEN(
 ) external onlyOwner
 ```
 
-买JUB
+买TOKEN
 
 
 Parameters:
 
 | Name    | Type    | Description             |
 | :------ | :------ | :---------------------- |
-| isAll_  | bool    | 是否将所有的USDT余额都购买JUB      |
+| isAll_  | bool    | 是否将所有的USDT余额都购买TOKEN    |
 | amount_ | uint256 | 消耗的USDT数量               |
 | slide_  | uint256 | 在swap上的滑点，100% = 100_00 |
 
@@ -324,11 +324,11 @@ Parameters:
 function sellTOKEN() external onlyReceiver
 ```
 
-全卖JUB
-### sellJUBAndBuyLPBond (0xd5b16fba)
+全卖TOKEN
+### sellTOKENAndBuyLPBond (0xf082b3d6)
 
 ```solidity
-function sellJUBAndBuyLPBond(
+function sellTOKENAndBuyLPBond(
     bool isAll_,
     uint256 amount_,
     uint256 slide_,
@@ -343,16 +343,16 @@ function sellJUBAndBuyLPBond(
 function stake(bool isAll_, uint256 uid_, uint256 amount_) external onlyOwner
 ```
 
-Stake JUB
+Stake TOKEN
 
 
 Parameters:
 
-| Name    | Type    | Description     |
-| :------ | :------ | :-------------- |
-| isAll_  | bool    | 是否将所有的JUB余额都质押  |
-| uid_    | uint256 | 项目id            |
-| amount_ | uint256 | 质押的JUB数量        |
+| Name    | Type    | Description       |
+| :------ | :------ | :---------------- |
+| isAll_  | bool    | 是否将所有的TOKEN余额都质押  |
+| uid_    | uint256 | 项目id              |
+| amount_ | uint256 | 质押的TOKEN数量        |
 
 ### unstake (0x60b15cc5)
 
@@ -360,16 +360,16 @@ Parameters:
 function unstake(bool isAll_, uint256 uid_, uint256 amount_) external onlyOwner
 ```
 
-Unstake JUB
+Unstake TOKEN
 
 
 Parameters:
 
-| Name    | Type    | Description      |
-| :------ | :------ | :--------------- |
-| isAll_  | bool    | 是否将所有的JUB本金提取出来  |
-| uid_    | uint256 | 项目id             |
-| amount_ | uint256 | 质押的JUB数量         |
+| Name    | Type    | Description        |
+| :------ | :------ | :----------------- |
+| isAll_  | bool    | 是否将所有的TOKEN本金提取出来  |
+| uid_    | uint256 | 项目id               |
+| amount_ | uint256 | 质押的TOKEN数量         |
 
 ### claimInterestAll (0xe011104a)
 
@@ -382,17 +382,17 @@ function claimInterestAll(
 ) external onlyOwner
 ```
 
-释放JUB的质押收益(静态收益)
+释放TOKEN的质押收益(静态收益)
 
 
 Parameters:
 
-| Name          | Type    | Description      |
-| :------------ | :------ | :--------------- |
-| isAll_        | bool    | 是否将所有的JUB本金提取出来  |
-| uid_          | uint256 | 项目id             |
-| amount_       | uint256 | 质押的JUB数量         |
-| releaseLevel_ | uint256 | 释放等级，从1开始。       |
+| Name          | Type    | Description        |
+| :------------ | :------ | :----------------- |
+| isAll_        | bool    | 是否将所有的TOKEN本金提取出来  |
+| uid_          | uint256 | 项目id               |
+| amount_       | uint256 | 质押的TOKEN数量         |
+| releaseLevel_ | uint256 | 释放等级，从1开始。         |
 
 ### releaseContributionRewardWithWBNB (0x2d650c9b)
 
@@ -419,17 +419,17 @@ function releaseContributionReward(
 ```
 
 release contribution reward
-### burnJUBAddQuota (0x0e1068db)
+### burnTOKENAddQuota (0xe0dc6a0d)
 
 ```solidity
-function burnJUBAddQuota(
+function burnTOKENAddQuota(
     bool isAll_,
     uint256 uid_,
     uint256 amount_
 ) external onlyOwner
 ```
 
-删除JUB增加额度
+删除TOKEN增加额度
 ### claimStakingAllWithWBNB (0xb1e886e6)
 
 ```solidity

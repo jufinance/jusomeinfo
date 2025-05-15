@@ -34,10 +34,10 @@ struct Adjust {
 
 ## State variables info
 
-### sJUB (0x0ebaf44b)
+### sTOKEN (0x726ed7c4)
 
 ```solidity
-address immutable sJUB
+address immutable sTOKEN
 ```
 
 

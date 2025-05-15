@@ -24,7 +24,7 @@ enum MANAGING {
 	 LIQUIDITYMANAGER,
 	 DEBTOR,
 	 REWARDMANAGER,
-	 SJUB
+	 STOKEN
 }
 ```
 
@@ -103,10 +103,10 @@ event ChangeActivated(Treasury.MANAGING indexed managing, address activated, boo
 
 ## State variables info
 
-### JUB (0xc0bc725e)
+### TOKEN (0x82bfefc8)
 
 ```solidity
-address immutable JUB
+address immutable TOKEN
 ```
 
 
@@ -320,17 +320,17 @@ mapping(address => uint256) rewardManagerQueue
 ```
 
 
-### sJUB (0x0ebaf44b)
+### sTOKEN (0x726ed7c4)
 
 ```solidity
-address sJUB
+address sTOKEN
 ```
 
 
-### sJUBQueue (0x6d1c6786)
+### sTOKENQueue (0xa685dddb)
 
 ```solidity
-uint256 sJUBQueue
+uint256 sTOKENQueue
 ```
 
 
@@ -353,7 +353,7 @@ uint256 totalDebt
 ### constructor
 
 ```solidity
-constructor(address _JUB, uint256 _blocksNeededForQueue)
+constructor(address _TOKEN, uint256 _blocksNeededForQueue)
 ```
 
 
@@ -362,7 +362,7 @@ constructor(address _JUB, uint256 _blocksNeededForQueue)
 ```solidity
 function initialize(
     address _USDT,
-    address _USDTJUB,
+    address _USDTTOKEN,
     address _calu
 ) public initializer
 ```
@@ -378,7 +378,7 @@ function deposit(
 ) external returns (uint256 send_)
 ```
 
-allow approved address to deposit an asset for JUB
+allow approved address to deposit an asset for TOKEN
         @param _amount uint
         @param _token address
         @param _profit uint
@@ -389,7 +389,7 @@ allow approved address to deposit an asset for JUB
 function withdraw(uint256 _amount, address _token) external
 ```
 
-allow approved address to burn JUB for reserves
+allow approved address to burn TOKEN for reserves
         @param _amount uint
         @param _token address
 ### incurDebt (0x12422d23)
@@ -416,7 +416,7 @@ allow approved address to repay borrowed reserves with reserves
 function repayDebtWithTOKEN(uint256 _amount) external
 ```
 
-allow approved address to repay borrowed reserves with JUB
+allow approved address to repay borrowed reserves with TOKEN
         @param _amount uint
 ### manage (0x0b0eee30)
 
@@ -459,7 +459,7 @@ function valueOf(
 ) public view returns (uint256 value_)
 ```
 
-returns JUB valuation of asset
+returns TOKEN valuation of asset
         @param _token address
         @param _amount uint
         @return value_ uint

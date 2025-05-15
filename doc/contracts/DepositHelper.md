@@ -27,10 +27,10 @@ contract IUniswapV2Router immutable UNISWAPV2ROUTER
 ```
 
 
-### JUB (0xc0bc725e)
+### TOKEN (0x82bfefc8)
 
 ```solidity
-address immutable JUB
+address immutable TOKEN
 ```
 
 
@@ -48,10 +48,10 @@ address immutable BONDDEPOSITORY_LP
 ```
 
 
-### PAIR_JUB_USDT (0x7c53a349)
+### PAIR_TOKEN_USDT (0x1a515a6a)
 
 ```solidity
-address immutable PAIR_JUB_USDT
+address immutable PAIR_TOKEN_USDT
 ```
 
 
@@ -62,9 +62,9 @@ address immutable PAIR_JUB_USDT
 ```solidity
 constructor(
     address _BONDDEPOSITORY_LP,
-    address _JUB,
+    address _TOKEN,
     address _USDT,
-    address _PAIR_JUB_USDT,
+    address _PAIR_TOKEN_USDT,
     address _uniswapV2Router
 )
 ```
@@ -95,7 +95,7 @@ function depositHelper(
 function estimateGetTOKEN(uint256 _amount) public view returns (uint256 payout)
 ```
 
-获取Bond的预估购买到JUB数量
+获取Bond的预估购买到TOKEN数量
 
 
 Parameters:
@@ -109,4 +109,4 @@ Return values:
 
 | Name   | Type    | Description |
 | :----- | :------ | :---------- |
-| payout | uint256 | JUB的数量      |
+| payout | uint256 | TOKEN的数量    |

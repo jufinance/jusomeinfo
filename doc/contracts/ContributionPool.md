@@ -112,10 +112,10 @@ contract IStaking immutable STAKING
 ```
 
 
-### JUB (0xc0bc725e)
+### TOKEN (0x82bfefc8)
 
 ```solidity
-address immutable JUB
+address immutable TOKEN
 ```
 
 
@@ -175,7 +175,21 @@ uint256 prevEpochRewardOffset
 ```
 
 
+### isDestructionToken (0x4382af3e)
+
+```solidity
+mapping(address => bool) isDestructionToken
+```
+
+
 ## Modifiers info
+
+### onlyManager
+
+```solidity
+modifier onlyManager()
+```
+
 
 ### onlyRootManager
 
@@ -196,7 +210,7 @@ modifier onlyBondDepository()
 ### constructor
 
 ```solidity
-constructor(address _JUB, address _releasePool, address _staking)
+constructor(address _TOKEN, address _releasePool, address _staking)
 ```
 
 
@@ -324,3 +338,10 @@ Parameters:
 | :-------------- | :------ | :---------- |
 | merkleRoot_     | bytes32 | 默克尔根        |
 | newTotalReward_ | uint256 | 本次更新的总奖励    |
+
+### setDestructionToken (0xc5ab6c3e)
+
+```solidity
+function setDestructionToken(address token_, bool state_) external onlyManager
+```
+

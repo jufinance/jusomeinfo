@@ -16,9 +16,9 @@ contract DashboardInfo is OwnableUpgradeable
 ```solidity
 enum CONTRACTS {
 	 USDT,
-	 JUB,
-	 SJUB,
-	 LP_JUB_USDT,
+	 TOKEN,
+	 STOKEN,
+	 LP_TOKEN_USDT,
 	 STAKING,
 	 RELEASEPOOL,
 	 TREASURY,
@@ -53,24 +53,24 @@ address USDT
 ```
 
 
-### JUB (0xc0bc725e)
+### TOKEN (0x82bfefc8)
 
 ```solidity
-address JUB
+address TOKEN
 ```
 
 
-### sJUB (0x0ebaf44b)
+### sTOKEN (0x726ed7c4)
 
 ```solidity
-address sJUB
+address sTOKEN
 ```
 
 
-### LP_JUB_USDT (0x6688a8bd)
+### LP_TOKEN_USDT (0x6f7b0850)
 
 ```solidity
-address LP_JUB_USDT
+address LP_TOKEN_USDT
 ```
 
 
@@ -116,9 +116,9 @@ address bondCalculator
 ```solidity
 function initialize(
     address _USDT,
-    address _JUB,
-    address _sJUB,
-    address _LP_JUB_USDT,
+    address _TOKEN,
+    address _sTOKEN,
+    address _LP_TOKEN_USDT,
     address _staking,
     address _releasePool,
     address _treasury,
@@ -135,10 +135,10 @@ function overview()
     external
     view
     returns (
-        uint256 amountJUB,
-        uint256 priceJUB,
-        uint256 circulatingJUB,
-        uint256 stakedJUB,
+        uint256 amountTOKEN,
+        uint256 priceTOKEN,
+        uint256 circulatingTOKEN,
+        uint256 stakedTOKEN,
         uint256 bondUSDT,
         uint256 bondLPWorth
     )
@@ -149,14 +149,14 @@ Dashboard基本信息.
 
 Return values:
 
-| Name           | Type    | Description                       |
-| :------------- | :------ | :-------------------------------- |
-| amountJUB      | uint256 | Total Minting Amount(NVB), 精度9.   |
-| priceJUB       | uint256 | JUB Price, 精度4.                   |
-| circulatingJUB | uint256 | Circulating supply xxx JUB, 精度9.  |
-| stakedJUB      | uint256 | Staked xxx JUB, 精度9.              |
-| bondUSDT       | uint256 | Bond USDT$xxxx, 精度4.              |
-| bondLPWorth    | uint256 | Bond LP$xxxx, 精度4.                |
+| Name             | Type    | Description                         |
+| :--------------- | :------ | :---------------------------------- |
+| amountTOKEN      | uint256 | Total Minting Amount(NVB), 精度9.     |
+| priceTOKEN       | uint256 | TOKEN Price, 精度4.                   |
+| circulatingTOKEN | uint256 | Circulating supply xxx TOKEN, 精度9.  |
+| stakedTOKEN      | uint256 | Staked xxx TOKEN, 精度9.              |
+| bondUSDT         | uint256 | Bond USDT$xxxx, 精度4.                |
+| bondLPWorth      | uint256 | Bond LP$xxxx, 精度4.                  |
 
 ### getChartsInfo (0x9b72aea1)
 
@@ -165,13 +165,13 @@ function getChartsInfo()
     external
     view
     returns (
-        uint256 circulatingWorthJUB,
+        uint256 circulatingWorthTOKEN,
         uint256 treasuryRFV,
         uint256 treasuryLPRatio,
-        uint256 stakedJUBRatio,
+        uint256 stakedTOKENRatio,
         uint256 runwayDay,
         uint256 treasuryAssetTotal,
-        uint256 totalJUBBurning
+        uint256 totalTOKENBurning
     )
 ```
 
@@ -180,15 +180,15 @@ function getChartsInfo()
 
 Return values:
 
-| Name                | Type    | Description                                  |
-| :------------------ | :------ | :------------------------------------------- |
-| circulatingWorthJUB | uint256 | Total value of sJUB circulating supply, 精度4  |
-| treasuryRFV         | uint256 | Risk Free Value of Treasury Assets, 精度4      |
-| treasuryLPRatio     | uint256 | Protocol Owned Liquidity JUB-USDT, 精度4       |
-| stakedJUBRatio      | uint256 | JUB Staked, 精度4                              |
-| runwayDay           | uint256 | Runway Available, 精度4                        |
-| treasuryAssetTotal  | uint256 | Market Value of Treasury Assets, 精度4         |
-| totalJUBBurning     | uint256 | Total JUB Burning, 精度9                       |
+| Name                  | Type    | Description                                    |
+| :-------------------- | :------ | :--------------------------------------------- |
+| circulatingWorthTOKEN | uint256 | Total value of sTOKEN circulating supply, 精度4  |
+| treasuryRFV           | uint256 | Risk Free Value of Treasury Assets, 精度4        |
+| treasuryLPRatio       | uint256 | Protocol Owned Liquidity TOKEN-USDT, 精度4       |
+| stakedTOKENRatio      | uint256 | TOKEN Staked, 精度4                              |
+| runwayDay             | uint256 | Runway Available, 精度4                          |
+| treasuryAssetTotal    | uint256 | Market Value of Treasury Assets, 精度4           |
+| totalTOKENBurning     | uint256 | Total TOKEN Burning, 精度9                       |
 
 ### setContract (0x865e6fd3)
 
@@ -206,7 +206,7 @@ function setContract(
 function getCirculatingWorthTOKEN()
     external
     view
-    returns (uint256 circulatingWorthJUB)
+    returns (uint256 circulatingWorthTOKEN)
 ```
 
 
@@ -224,10 +224,10 @@ function getTreasuryLPRatio() external view returns (uint256)
 ```
 
 
-### getStakedJUBRatio (0x438b2398)
+### getStakedTOKENRatio (0x229940be)
 
 ```solidity
-function getStakedJUBRatio() external view returns (uint256)
+function getStakedTOKENRatio() external view returns (uint256)
 ```
 
 
@@ -238,10 +238,10 @@ function getRunway() external view returns (uint256)
 ```
 
 
-### getTotalJUBBurning (0xac06aab3)
+### getTotalTOKENBurning (0x7758a9b3)
 
 ```solidity
-function getTotalJUBBurning() external view returns (uint256)
+function getTotalTOKENBurning() external view returns (uint256)
 ```
 
 

@@ -8,7 +8,7 @@
 library Address
 ```
 
-
+Collection of functions related to the address type
 ## Functions info
 
 ### isContract
@@ -164,7 +164,7 @@ function functionDelegateCall(
 Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],
 but performing a delegate call.
 
-_Available since v3.3._
+_Available since v3.4._
 ### functionDelegateCall
 
 ```solidity
@@ -178,12 +178,4 @@ function functionDelegateCall(
 Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],
 but performing a delegate call.
 
-_Available since v3.3._
-### addressToString
-
-```solidity
-function addressToString(
-    address _address
-) internal pure returns (string memory)
-```
-
+_Available since v3.4._

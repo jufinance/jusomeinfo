@@ -43,11 +43,10 @@ function permit(
 ) public virtual override
 ```
 
-See {IERC2612Permit-permit}.
+
 ### nonces (0x7ecebe00)
 
 ```solidity
 function nonces(address owner) public view override returns (uint256)
 ```
 
-See {IERC2612Permit-nonces}.

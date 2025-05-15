@@ -11,10 +11,10 @@ contract BondingCalculator is Initializable
 
 ## State variables info
 
-### JUB (0xc0bc725e)
+### TOKEN (0x82bfefc8)
 
 ```solidity
-address immutable JUB
+address immutable TOKEN
 ```
 
 
@@ -64,4 +64,4 @@ function valuation(
 function markdown(address _pair) external view returns (uint256)
 ```
 
-根据LP的RFV，计算一个JUB的USD价值。
+根据LP的RFV，计算一个TOKEN的USD价值。
