@@ -137,6 +137,32 @@
   },
   {
     "inputs": [],
+    "name": "FEE_PERCENT",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "",
+        "type": "uint24"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "JUREFERRER",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "PARTNER",
     "outputs": [
       {
@@ -179,7 +205,7 @@
     "name": "UNISWAPV2ROUTER",
     "outputs": [
       {
-        "internalType": "contract IUniswapV2Router",
+        "internalType": "contract IJAMMRouter",
         "name": "",
         "type": "address"
       }

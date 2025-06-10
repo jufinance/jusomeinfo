@@ -3,7 +3,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_TOKEN",
+        "name": "_JUC",
         "type": "address"
       }
     ],
@@ -132,12 +132,12 @@
   },
   {
     "inputs": [],
-    "name": "PRICE_MANAGER",
+    "name": "JUC",
     "outputs": [
       {
-        "internalType": "bytes32",
+        "internalType": "address",
         "name": "",
-        "type": "bytes32"
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -145,12 +145,12 @@
   },
   {
     "inputs": [],
-    "name": "TOKEN",
+    "name": "PRICE_MANAGER",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "bytes32",
         "name": "",
-        "type": "address"
+        "type": "bytes32"
       }
     ],
     "stateMutability": "view",

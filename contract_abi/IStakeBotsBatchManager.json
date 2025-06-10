@@ -1,0 +1,32 @@
+[
+  {
+    "inputs": [],
+    "name": "botsLimit",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "priceMax",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "priceMin",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "swapAmtMax",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IStakeBotsBatchManager.BotsLimit",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

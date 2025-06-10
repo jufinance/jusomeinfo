@@ -253,6 +253,19 @@
   },
   {
     "inputs": [],
+    "name": "PRECISION",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "RELEASE_POOL",
     "outputs": [
       {
@@ -330,6 +343,19 @@
   {
     "inputs": [],
     "name": "bondInviteTotalReward",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "checkLimit",
     "outputs": [
       {
         "internalType": "uint256",
@@ -638,19 +664,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "rebaseMaxContributionRewardFromPrev",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -705,6 +718,19 @@
       }
     ],
     "name": "revokeRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "limit_",
+        "type": "uint256"
+      }
+    ],
+    "name": "setCheckLimit",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

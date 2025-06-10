@@ -3,27 +3,32 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_BONDDEPOSITORY_LP",
+        "name": "BONDDEPOSITORY_LP_",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_TOKEN",
+        "name": "TOKEN_",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_USDT",
+        "name": "USDT_",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_PAIR_TOKEN_USDT",
+        "name": "PAIR_TOKEN_USDT_",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_uniswapV2Router",
+        "name": "uniswapV2Router_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "staking_",
         "type": "address"
       }
     ],
@@ -89,6 +94,37 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "uid",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountU",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountToken",
+        "type": "uint256"
+      }
+    ],
+    "name": "EventStakeByUSDT",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": false,
         "internalType": "uint8",
         "name": "version",
@@ -113,7 +149,46 @@
   },
   {
     "inputs": [],
+    "name": "FEE_PERCENT",
+    "outputs": [
+      {
+        "internalType": "uint24",
+        "name": "",
+        "type": "uint24"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "JUREFERRER",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "PAIR_TOKEN_USDT",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "STAKING",
     "outputs": [
       {
         "internalType": "address",
@@ -142,7 +217,7 @@
     "name": "UNISWAPV2ROUTER",
     "outputs": [
       {
-        "internalType": "contract IUniswapV2Router",
+        "internalType": "contract IJAMMRouter",
         "name": "",
         "type": "address"
       }
@@ -195,7 +270,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_amount",
+        "name": "amount_",
         "type": "uint256"
       }
     ],
@@ -211,8 +286,87 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "bondDepository_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
+      }
+    ],
+    "name": "estimateLPGetToken",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amountUSDT_",
+        "type": "uint256"
+      }
+    ],
+    "name": "getLiquidityAddValue",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sender_",
+        "type": "address"
+      }
+    ],
+    "name": "setApprove",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "uid_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount_",
+        "type": "uint256"
+      }
+    ],
+    "name": "stakeByUSDT",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
